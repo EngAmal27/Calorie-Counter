@@ -10,5 +10,20 @@ let isError = false;
 
 
 function cleanInputString (str) {
+    console.log("original string: ", str);
     const regex = /\+-\s/;
+    return str.replace(/[+\-\s]/g, '');
+    
+}
+cleanInputString("1 + 2 - 3");
+  
+function isInvalidInput(str) {
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
+  }
+
+  function addEntry() {
+    const targetId = '#' + entryDropdown.value;
+    const targetInputContainer = document.querySelector(targetId + ' .input-container');
+    console.log(targetInputContainer); // For debugging purposes
 }
